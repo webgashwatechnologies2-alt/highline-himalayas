@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Route api/lead directly to send-lead.php
+  RewriteRule ^api/lead/?$ send-lead.php [L,QSA]
+
+  # Remove trailing slash from non-directories
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !^/api/
+  RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+  # Serve .html version of URL if it exists
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.*)$ $1.html [L]
+
+  # 404 fallback
+  ErrorDocument 404 /404.html
+</IfModule>
