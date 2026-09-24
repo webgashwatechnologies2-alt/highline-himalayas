@@ -64,28 +64,19 @@ export const allPackages: TourPackage[] = [
     title: "Manali Chandratal Kaza Safari",
     subtitle:
       "A thrilling Spiti Valley road trip through Manali, Chandratal Lake and Kaza",
-
     route: "Delhi → Manali → Chandratal → Kaza → Manali → Delhi",
-
     nights: "7N",
     days: "8D",
-
     badge: "Best Seller",
     badgeGrad: "from-[#FF8C00] to-[#FF8C00]",
-
     tag: "⭐ Adventure Special",
     tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-
-    discount: "20% OFF",
+    discount: " ",
     rating: 4.9,
     reviews: 312,
-
     price: "Price on Request",
     category: "adventure",
-
     image: "/images/packagesimages/chandertaaalnew.webp",
-
-
     overview:
       "Experience the ultimate Himalayan adventure with our Manali Chandratal Kaza Safari. Explore the scenic beauty of Manali, drive through the spectacular Atal Tunnel and Kunzum Pass, discover the remote villages and monasteries of Spiti Valley, and witness the mesmerizing beauty of Chandratal Lake. This carefully planned journey is perfect for adventure seekers, nature lovers, couples and families looking to explore the breathtaking landscapes of Himachal Pradesh.",
 
@@ -101,7 +92,6 @@ export const allPackages: TourPackage[] = [
     ],
 
     includes: ["stay", "meals", "car", "sightseeing"],
-
     included: [
       "Accommodation in comfortable hotels and camps",
       "Daily Breakfast & Dinner",
@@ -265,27 +255,19 @@ export const allPackages: TourPackage[] = [
     title: "Tirthan Valley Tour Package",
     subtitle:
       "A peaceful Himalayan escape through Tirthan Valley, Jibhi, Jalori Pass and nearby mountain villages",
-
     route: "Delhi → Tirthan Valley → Jibhi → Jalori Pass → Tirthan Valley → Delhi",
-
     nights: "6N",
     days: "7D",
-
     badge: "Top Rated",
     badgeGrad: "from-[#1565C0] to-[#1976D2]",
-
     tag: "⭐ Top Rated",
     tagColor: "text-blue-600 bg-blue-50 border-blue-200",
-
-    discount: "15% OFF",
+    discount: "",
     rating: 4.95,
     reviews: 189,
-
     price: "Price on Request",
     category: "family",
-
     image: "/images/packagesimages/jibhi-tirthan.webp",
-
     overview:
       "Escape into the peaceful beauty of Tirthan Valley, one of Himachal Pradesh’s most scenic destinations. Surrounded by dense deodar forests, snow-capped Himalayan peaks, the crystal-clear Tirthan River and charming mountain villages, this package offers the perfect blend of nature, relaxation and adventure. Explore Jibhi, visit its famous waterfall, enjoy peaceful riverside moments, discover traditional Himalayan villages and experience the spectacular landscapes around Jalori Pass.",
 
@@ -443,27 +425,19 @@ export const allPackages: TourPackage[] = [
     title: "Shimla Kullu Manali Honeymoon Package",
     subtitle:
       "A romantic Himalayan escape through Shimla, Kullu and Manali",
-
     route: "Delhi → Shimla → Kufri → Kullu → Manali → Solang Valley → Delhi",
-
     nights: "5N",
     days: "6D",
-
     badge: "Fastest Selling",
     badgeGrad: "from-[#059669] to-[#10B981]",
-
     tag: "🔥 Fastest Selling",
     tagColor: "text-emerald-700 bg-emerald-50 border-emerald-200",
-
-    discount: "20% OFF",
+    discount: "",
     rating: 4.8,
     reviews: 421,
-
     price: "Price on Request",
     category: "honeymoon",
-
     image: "/images/destinations/Shimla-During-Monsoon.jpg",
-
     overview:
       "Celebrate your love with a memorable Himalayan honeymoon across Shimla, Kullu and Manali. Explore the romantic charm of Shimla, enjoy scenic drives through the beautiful Kullu Valley, experience the peaceful surroundings of Manali and spend quality time together amidst breathtaking mountain landscapes. From cozy evenings on Mall Road to scenic views of Solang Valley, this package is designed especially for couples looking for a perfect Himachal honeymoon experience.",
 
@@ -612,30 +586,21 @@ export const allPackages: TourPackage[] = [
     title: "Dharamshala Dalhousie Amritsar Tour",
     subtitle:
       "A soulful journey through Amritsar, Dalhousie and Dharamshala",
-
     route: "Amritsar → Dalhousie → Khajjiar → Dharamshala → Amritsar",
-
     nights: "5N",
     days: "6D",
-
     badge: "On Special Tour",
     badgeGrad: "from-[#7C3AED] to-[#9333EA]",
-
     tag: "✨ Special Tour",
     tagColor: "text-purple-700 bg-purple-50 border-purple-200",
-
     discount: "10% OFF",
     rating: 4.85,
     reviews: 156,
-
     price: "Price on Request",
     category: "culture",
-
     image: "/images/packagesimages/dharmashanreimage.webp",
-
     overview:
       "Discover the spiritual, cultural and scenic beauty of Punjab and Himachal Pradesh with this memorable Amritsar, Dalhousie and Dharamshala tour. Begin with the sacred Golden Temple and historic Jallianwala Bagh in Amritsar, continue to the charming hill station of Dalhousie and the beautiful meadows of Khajjiar, and end your journey in Dharamshala and McLeod Ganj with its Tibetan culture, monasteries and Himalayan landscapes.",
-
     highlights: [
       "Golden Temple and Jallianwala Bagh in Amritsar",
       "Optional Wagah Border ceremony experience",
@@ -780,25 +745,18 @@ export const allPackages: TourPackage[] = [
     title: "Spiti Valley Tour Package From Manali",
     subtitle:
       "Explore the breathtaking cold desert landscapes, ancient monasteries and high-altitude villages of Spiti Valley",
-
     route: "Manali → Kaza → Kibber → Langza → Hikkim → Komic → Chandratal → Manali",
-
     nights: "6N",
     days: "7D",
-
     badge: "Adventure Special",
     badgeGrad: "from-[#EA580C] to-[#F97316]",
-
     tag: "🏔️ Spiti Adventure",
     tagColor: "text-orange-700 bg-orange-50 border-orange-200",
-
-    discount: "25% OFF",
+    discount: "",
     rating: 4.92,
     reviews: 98,
-
     price: "Price on Request",
     category: "adventure",
-
     image: "/images/packagesimages/sptvalley.webp",
 
 
@@ -956,25 +914,18 @@ export const allPackages: TourPackage[] = [
     title: "Manali Shimla Honeymoon Package",
     subtitle:
       "A romantic Himalayan escape covering the scenic beauty of Shimla and Manali",
-
     route: "Delhi → Shimla → Manali → Solang Valley → Kullu → Delhi",
-
     nights: "6N",
     days: "7D",
-
     badge: "Honeymoon Special",
     badgeGrad: "from-[#E11D48] to-[#F43F5E]",
-
     tag: "💖 Honeymoon Special",
     tagColor: "text-rose-700 bg-rose-50 border-rose-200",
-
-    discount: "20% OFF",
+    discount: "",
     rating: 4.78,
     reviews: 267,
-
     price: "Price on Request",
     category: "honeymoon",
-
     image: "/images/packagesimages/honeymoonnew.webp",
 
 
@@ -1129,10 +1080,9 @@ export const allPackages: TourPackage[] = [
     nights: "6N", days: "7D",
     badge: "Group Choice", badgeGrad: "from-[#0284C7] to-[#0EA5E9]",
     tag: "👥 Group Choice", tagColor: "text-sky-700 bg-sky-50 border-sky-200",
-    discount: "20% OFF", rating: 4.9, reviews: 143,
+    discount: "", rating: 4.9, reviews: 143,
     price: "Price on Request", category: "group",
     image: "/images/packagesimages/beas-river-near-kullu.webp",
-
     overview: "The ultimate Parvati Valley to Kullu exploration — covering the hippie haven of Kasol, the serene Jibhi forests, and the adventure capital of Kullu Manali. Perfect for groups and adventure-seeking friends.",
     highlights: [
       "Kheerganga Kasol Kufri Trail Himalayan Trek & Jibhi",
@@ -1183,7 +1133,7 @@ export const allPackages: TourPackage[] = [
     nights: "6N", days: "7D",
     badge: "Must Try", badgeGrad: "from-[#DB2777] to-[#EC4899]",
     tag: "💑 Must Try", tagColor: "text-pink-700 bg-pink-50 border-pink-200",
-    discount: "20% OFF", rating: 4.97, reviews: 201,
+    discount: "", rating: 4.97, reviews: 201,
     price: "Price on Request", category: "honeymoon",
     image: "/images/packagesimages/Honeymoon-Cover-image.webp",
     overview: "Begin your love story in the romantic mountains of Himachal Pradesh. From the charming colonial lanes of Shimla to the snow-capped peaks of Manali, every moment of this honeymoon package is crafted for pure romance and togetherness.",
@@ -1247,7 +1197,7 @@ export const allPackages: TourPackage[] = [
     tag: "⭐ Best Value",
     tagColor:
       "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "20% OFF",
+    discount: "",
     rating: 4.9,
     reviews: 278,
     price: "Price on Request",
@@ -1472,7 +1422,7 @@ export const allPackages: TourPackage[] = [
     tag: "🏍️ Bike Expedition",
     tagColor:
       "text-orange-700 bg-orange-50 border-orange-200",
-    discount: "15% OFF",
+    discount: "",
     rating: 4.9,
     reviews: 278,
     price: "Price on Request",
@@ -1711,7 +1661,7 @@ export const allPackages: TourPackage[] = [
     accentColor: "#FF8C00",
   },
   {
-    id: "kinnaur-spiti-road-trip", destination: "spiti", title: "Kinnaur Spiti Road Trip", subtitle: "The ultimate 12-day Himalayan motorcycle expedition through Spiti Valley, Kinnaur and the world's highest villages", route: "Chandigarh → Manali → Jispa → Kaza → Nako → Kalpa → Shimla → Chandigarh", nights: "11N", days: "12D", badge: "Adventure Special", badgeGrad: "from-[#FF8C00] to-[#F59E0B]", tag: "🏍️ Bike Expedition", tagColor: "text-orange-700 bg-orange-50 border-orange-200", discount: "15% OFF", rating: 4.9, reviews: 278, price: "Price on Request", category: "adventure",
+    id: "kinnaur-spiti-road-trip", destination: "spiti", title: "Kinnaur Spiti Road Trip", subtitle: "The ultimate 12-day Himalayan motorcycle expedition through Spiti Valley, Kinnaur and the world's highest villages", route: "Chandigarh → Manali → Jispa → Kaza → Nako → Kalpa → Shimla → Chandigarh", nights: "11N", days: "12D", badge: "Adventure Special", badgeGrad: "from-[#FF8C00] to-[#F59E0B]", tag: "🏍️ Bike Expedition", tagColor: "text-orange-700 bg-orange-50 border-orange-200", discount: "", rating: 4.9, reviews: 278, price: "Price on Request", category: "adventure",
     image:
       "/images/packagesimages/sptbike.webp",
     overview:
@@ -1749,7 +1699,7 @@ export const allPackages: TourPackage[] = [
     badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "💑 Honeymoon Special",
     tagColor: "text-orange-700 bg-orange-50 border-orange-200",
-    discount: "15% OFF",
+    discount: "",
     rating: 4.9,
     reviews: 278,
     price: "Price on Request",
@@ -1910,7 +1860,7 @@ export const allPackages: TourPackage[] = [
     badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "👨‍👩‍👧 Family Tour",
     tagColor: "text-orange-700 bg-orange-50 border-orange-200",
-    discount: "15% OFF",
+    discount: "",
     rating: 4.9,
     reviews: 278,
     price: "Price on Request",
@@ -2071,7 +2021,7 @@ export const allPackages: TourPackage[] = [
     badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "🛕 Monastery Trail",
     tagColor: "text-orange-700 bg-orange-50 border-orange-200",
-    discount: "15% OFF",
+    discount: "",
     rating: 4.9,
     reviews: 278,
     price: "Price on Request",
@@ -2230,7 +2180,7 @@ export const allPackages: TourPackage[] = [
     badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "🛕 Monastery Trail",
     tagColor: "text-orange-700 bg-orange-50 border-orange-200",
-    discount: "15% OFF",
+    discount: "",
     rating: 4.9,
     reviews: 278,
     price: "Price on Request",
@@ -2386,7 +2336,7 @@ export const allPackages: TourPackage[] = [
     nights: "5N", days: "6D",
     badge: "Best Seller", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "⭐ Best Value", tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "20% OFF", rating: 4.9, reviews: 412,
+    discount: "", rating: 4.9, reviews: 412,
     price: "Price on Request", category: "adventure",
     image: "/images/packagesimages/lehhh.webp",
 
@@ -2442,7 +2392,7 @@ export const allPackages: TourPackage[] = [
     nights: "5N", days: "6D",
     badge: "Best Seller", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "⭐ Best Value", tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "20% OFF", rating: 4.9, reviews: 412,
+    discount: "", rating: 4.9, reviews: 412,
     price: "Price on Request", category: "adventure",
     image: "/images/packagesimages/lehimage.webp",
 
@@ -2498,7 +2448,7 @@ export const allPackages: TourPackage[] = [
     nights: "9N", days: "10D",
     badge: "Adventure Special", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "🏍️ Bike Expedition", tagColor: "text-orange-700 bg-orange-50 border-orange-200",
-    discount: "20% OFF", rating: 4.9, reviews: 412,
+    discount: "", rating: 4.9, reviews: 412,
     price: "Price on Request", category: "adventure",
     image: "/images/packagesimages/lehbike.webp",
 
@@ -2570,7 +2520,7 @@ export const allPackages: TourPackage[] = [
     nights: "6N", days: "7D",
     badge: "Family & Couple Special", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "👨‍👩‍👧 Family & Couple Friendly", tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "15% OFF", rating: 4.9, reviews: 234,
+    discount: "", rating: 4.9, reviews: 234,
     price: "Price on Request", category: "family",
     image: "/images/packagesimages/Ladakh-honeymoon.webp",
 
@@ -2633,7 +2583,7 @@ export const allPackages: TourPackage[] = [
     nights: "4N", days: "5D",
     badge: "Heritage Special", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "🛕 Monastery Trail", tagColor: "text-orange-700 bg-orange-50 border-orange-200",
-    discount: "15% OFF", rating: 4.9, reviews: 234,
+    discount: "", rating: 4.9, reviews: 234,
     price: "Price on Request", category: "cultural",
     image: "/images/packagesimages/ladakh-tours-packages.webp",
 
@@ -2691,7 +2641,7 @@ export const allPackages: TourPackage[] = [
     nights: "4N", days: "5D",
     badge: "Adventure Special", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "🏔️ Adventure Special", tagColor: "text-orange-700 bg-orange-50 border-orange-200",
-    discount: "15% OFF", rating: 4.9, reviews: 234,
+    discount: "", rating: 4.9, reviews: 234,
     price: "Price on Request", category: "adventure",
     image: "/images/packagesimages/Ladakh-Nubra-Valley.webp",
 
@@ -2755,7 +2705,7 @@ export const allPackages: TourPackage[] = [
     nights: "7N", days: "8D",
     badge: "Best Seller", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "⭐ Best Value", tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "20% OFF", rating: 4.9, reviews: 534,
+    discount: "", rating: 4.9, reviews: 534,
     price: "Price on Request", category: "family",
     image: "/images/packagesimages/mkashmir.webp",
 
@@ -2815,7 +2765,7 @@ export const allPackages: TourPackage[] = [
     nights: "7N", days: "8D",
     badge: "Best Seller", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "⭐ Best Value", tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "20% OFF", rating: 4.9, reviews: 534,
+    discount: "", rating: 4.9, reviews: 534,
     price: "Price on Request", category: "family",
     image: "/images/packagesimages/vashnodeviimage.webp",
 
@@ -2880,7 +2830,7 @@ export const allPackages: TourPackage[] = [
     nights: "3N", days: "4D",
     badge: "Best Seller", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "⭐ Best Value", tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "20% OFF", rating: 4.9, reviews: 534,
+    discount: "", rating: 4.9, reviews: 534,
     price: "Price on Request", category: "family",
     image: "/images/packagesimages/Kashmirnewww.webp",
 
@@ -2933,7 +2883,7 @@ export const allPackages: TourPackage[] = [
     nights: "4N", days: "5D",
     badge: "Best Seller", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "⭐ Best Value", tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "20% OFF", rating: 4.9, reviews: 534,
+    discount: "", rating: 4.9, reviews: 534,
     price: "Price on Request", category: "family",
     image: "/images/packagesimages/kashmirtrails.webp",
 
@@ -2992,7 +2942,7 @@ export const allPackages: TourPackage[] = [
     nights: "3N", days: "4D",
     badge: "Best Seller", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "⭐ Best Value", tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "20% OFF", rating: 4.9, reviews: 534,
+    discount: "", rating: 4.9, reviews: 534,
     price: "Price on Request", category: "family",
     image: "/images/packagesimages/gulmarghero.webp",
 
@@ -3049,7 +2999,7 @@ export const allPackages: TourPackage[] = [
     badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "❤️ Romantic Getaway",
     tagColor: "text-rose-600 bg-rose-50 border-rose-200",
-    discount: "20% OFF",
+    discount: "",
     rating: 4.9,
     reviews: 534,
     price: "Price on Request",
@@ -3174,7 +3124,7 @@ export const allPackages: TourPackage[] = [
     nights: "6N", days: "7D",
     badge: "Best Seller", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "⭐ Best Value", tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "20% OFF", rating: 4.9, reviews: 678,
+    discount: "", rating: 4.9, reviews: 678,
     price: "Price on Request", category: "all",
     image: "/images/packagesimages/keralahero.webp",
     overview: "Experience the best of Kerala in 7 days with a perfect blend of hill stations, wildlife, backwaters and beaches. Explore the tea gardens of Munnar, enjoy the spice plantations and wildlife of Thekkady, cruise through the serene backwaters of Alleppey on a private houseboat, relax on the beaches of Kovalam and conclude your journey in Trivandrum.",
@@ -3309,7 +3259,7 @@ export const allPackages: TourPackage[] = [
     nights: "6N", days: "7D",
     badge: "Best Seller", badgeGrad: "from-[#FF8C00] to-[#F59E0B]",
     tag: "⭐ Best Value", tagColor: "text-amber-600 bg-amber-50 border-amber-200",
-    discount: "20% OFF", rating: 4.9, reviews: 678,
+    discount: "", rating: 4.9, reviews: 678,
     price: "Price on Request", category: "all",
     image: "/images/packagesimages/k2.webp",
     overview: "Experience an exciting Kerala journey combining hill stations, wildlife, spice plantations, backwaters and beaches. Explore the lush tea gardens of Munnar, discover the wildlife and spices of Thekkady, cruise through the serene backwaters of Alleppey on a private houseboat, relax at the beaches of Kovalam and enjoy the vibrant surroundings of Trivandrum.",
@@ -3444,7 +3394,7 @@ export const allPackages: TourPackage[] = [
     nights: "5N", days: "6D",
     badge: "Scenic Escape", badgeGrad: "from-[#16A34A] to-[#15803D]",
     tag: "⭐ Hill Station Special", tagColor: "text-green-700 bg-green-50 border-green-200",
-    discount: "15% OFF", rating: 4.8, reviews: 486,
+    discount: "", rating: 4.8, reviews: 486,
     price: "Price on Request", category: "all",
     image: "/images/packagesimages/munnar.webp",
     overview: "Discover the tranquil beauty of Kerala’s highlands on a scenic 6-day journey through Munnar and Vagamon. Walk through endless tea plantations, explore mist-covered viewpoints and waterfalls, enjoy peaceful hill landscapes and experience the natural charm of Thekkady. This itinerary is designed for travelers looking for a relaxing mountain holiday filled with greenery, fresh air and memorable scenic experiences.",
@@ -3567,7 +3517,7 @@ export const allPackages: TourPackage[] = [
     nights: "6N", days: "7D",
     badge: "Honeymoon Special", badgeGrad: "from-[#E11D48] to-[#BE123C]",
     tag: "💕 Romantic Escape", tagColor: "text-rose-600 bg-rose-50 border-rose-200",
-    discount: "20% OFF", rating: 4.9, reviews: 592,
+    discount: "", rating: 4.9, reviews: 592,
     price: "Price on Request", category: "all",
     image: "/images/packagesimages/kerala-honeymoon.webp",
     overview: "Celebrate your honeymoon with a romantic 7-day journey through Kerala’s most beautiful destinations. Begin among the misty tea plantations of Munnar, continue through the lush landscapes and spice gardens of Thekkady, enjoy a peaceful private houseboat cruise through Alleppey’s backwaters and relax together on the golden shores of Kovalam. Designed for couples seeking scenic beauty, peaceful stays and memorable experiences, this journey combines Kerala’s hills, forests, waterways and beaches.",
@@ -3706,7 +3656,7 @@ export const allPackages: TourPackage[] = [
     nights: "5N", days: "6D",
     badge: "Adventure Special", badgeGrad: "from-[#15803D] to-[#166534]",
     tag: "🌿 Wildlife & Nature", tagColor: "text-green-700 bg-green-50 border-green-200",
-    discount: "15% OFF", rating: 4.8, reviews: 428,
+    discount: "", rating: 4.8, reviews: 428,
     price: "Price on Request", category: "all",
     image: "/images/packagesimages/reserve-forest.webp",
     overview: "Experience the wild and cultural side of Kerala with a 6-day Wayanad adventure covering misty mountains, wildlife sanctuaries, ancient caves, waterfalls, tribal heritage and lush spice plantations. From thrilling wildlife encounters in Tholpetty to the historic Edakkal Caves and scenic Chembra Hills, this itinerary combines nature, adventure and the traditional character of Wayanad.",
@@ -3829,7 +3779,7 @@ export const allPackages: TourPackage[] = [
     nights: "6N", days: "7D",
     badge: "Family Favourite", badgeGrad: "from-[#2563EB] to-[#1D4ED8]",
     tag: "👨‍👩‍👧‍👦 Family Special", tagColor: "text-blue-700 bg-blue-50 border-blue-200",
-    discount: "15% OFF", rating: 4.8, reviews: 735,
+    discount: "", rating: 4.8, reviews: 735,
     price: "Price on Request", category: "all",
     image: "/images/packagesimages/alleppey.webp",
     overview: "Enjoy a memorable 7-day family holiday through Kerala’s most loved destinations. Discover the cool tea-covered hills of Munnar, explore the wildlife and spice gardens of Thekkady, experience a traditional houseboat cruise through the peaceful backwaters of Alleppey and relax on the beautiful beaches of Kovalam. With comfortable transfers, family-friendly sightseeing and a balanced mix of nature, culture and leisure, this itinerary is designed for families travelling together.",

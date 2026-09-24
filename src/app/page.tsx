@@ -10,6 +10,7 @@ import ThingsToDo from "@/app/components/ThingsToDo";
 import ExploreInMotion from "@/app/components/ExploreInMotion";
 import TestimonialsSection from "@/app/components/TestimonialsSection";
 import WhyTravelersTrust from "@/app/components/WhyTravelersTrust";
+import SideFloatingTabs from "@/app/components/SideFloatingTabs";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <ThingsToDo />
       <ExploreInMotion />
       <TestimonialsSection/>
+      <SideFloatingTabs />
     </main>
   );
 }

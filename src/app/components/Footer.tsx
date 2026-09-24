@@ -77,7 +77,7 @@ export default function Footer() {
             </span>
             <div className="flex items-center gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/18YwHX7c31/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
@@ -107,7 +107,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/highline_himalayas?stkn=MTRrbWEzMmt6MHl4ag%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -204,11 +204,18 @@ export default function Footer() {
               Contact Us
             </h3>
             <a
-                href="tel:+918988449735"
-                className="text-slate-500 hover:text-slate-900 transition-colors"
-              >
-                +91 89884 49735
-              </a>
+              href="tel:+918988449735"
+              className="text-slate-500 hover:text-slate-900 transition-colors"
+            >
+              +91 89884 49735
+
+            </a> <br />
+            <a
+              href="mailto:info@highlinehimalayas.com"
+              className="text-slate-500 hover:text-slate-900 transition-colors"
+            >
+              info@highlinehimalayas.com
+            </a>
           </div>
 
         </div>

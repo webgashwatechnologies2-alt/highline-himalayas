@@ -64,13 +64,13 @@ export default function LeadPopupModal() {
 
     try {
       await submitLead({
-        formType: "Special Seasonal Offer (Popup Modal)",
+        formType: "SExclusive Himalayan Escape (Popup Modal)",
         name: formData.name,
         phone: formData.phone,
         destination: formData.destination,
         travelMonth: formData.travelMonth,
         travelers: formData.travelers,
-        message: "Claimed 35% OFF special seasonal offer.",
+        message: "Exclusive Himalayan Escape",
       });
 
       setSubmitted(true);
@@ -128,7 +128,7 @@ export default function LeadPopupModal() {
             {/* Top Brand / Offer Badge */}
             <div className="relative z-10 space-y-3">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-orange-500 to-amber-500 text-white text-[10.5px] font-black uppercase tracking-wider shadow-lg shadow-orange-500/30 border border-orange-300/30">
-                <Flame size={13} className="fill-white" /> Special Seasonal Offer
+                <Flame size={13} className="fill-white" /> Exclusive Himalayan Escape
               </div>
 
               <div className="pt-1">
@@ -136,8 +136,8 @@ export default function LeadPopupModal() {
                   Plan Your Dream Trip to the Himalayas
                 </h3>
                 <p className="text-xs text-slate-200 mt-2 leading-relaxed">
-                  Flat <span className="text-amber-300 font-extrabold underline decoration-amber-400">35% OFF</span> on
-                  Manali, Spiti, Ladakh &amp; Kashmir custom holiday packages!
+                  Explore Manali, Spiti, Ladakh &amp; Kashmir with our
+                  <span className="text-amber-300 font-extrabold"> curated holiday packages!</span>
                 </p>
               </div>
             </div>

@@ -69,8 +69,6 @@ const nationalDestinations = [
 ];
 
 // International destinations
-
-
 export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
@@ -151,25 +149,20 @@ export default function Header() {
       <div className="relative z-50 bg-gradient-to-r from-[#D84315] via-[#E65100] to-[#FF6B00] text-white text-xs border-b border-orange-700/20 shadow-sm">
         <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-10 py-1.5 sm:py-2.5">
           <div className="flex items-center justify-between gap-2 sm:gap-4">
-            
             <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0">
               <span className="inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-0.5 rounded-full bg-white/20 backdrop-blur-md text-[10px] sm:text-[11px] font-extrabold tracking-wide uppercase shadow-sm border border-white/25 shrink-0 animate-pulse">
                 <Flame size={12} className="text-amber-200 fill-amber-300" />
                 <span className="hidden xs:inline">Special </span>
-                <span>Offer</span>
+                <span>Explore</span>
               </span>
-
               <p className="font-semibold text-[11.5px] sm:text-[13px] truncate text-white/95">
                 <span className="hidden sm:inline">Himalayan Holiday Escapes — </span>
-                <span>Up to </span>
                 <span className="text-amber-200 font-extrabold underline decoration-amber-300 underline-offset-2">
-                  35% OFF
+                  Explore
                 </span>
-                <span className="hidden md:inline"> on Manali, Spiti &amp; Ladakh!</span>
+                <span className="hidden md:inline"> the  &amp; Himalayas!</span>
               </p>
             </div>
-
-            {/* Mobile Single-line Timer (<sm) */}
             <div className="flex sm:hidden items-center gap-1 shrink-0 bg-black/20 backdrop-blur-md px-2 py-1 rounded-lg border border-white/15">
               <Clock size={11} className="text-amber-200" />
               <span className="bg-white/20 px-1 py-0.5 rounded text-[10px] font-mono font-black text-white min-w-[18px] text-center">
@@ -184,15 +177,11 @@ export default function Header() {
                 {formatDigit(timeLeft.seconds)}
               </span>
             </div>
-
-            {/* Tablet & Desktop Timer (sm+) */}
             <div className="hidden sm:flex items-center gap-1.5 shrink-0 bg-black/15 backdrop-blur-md px-3 py-1 rounded-lg border border-white/15">
               <Clock size={13} className="text-amber-200" />
               <span className="text-[11px] uppercase font-bold text-white/90 mr-1">
                 Ends In:
               </span>
-
-              {/* Hours */}
               <div className="flex flex-col items-center">
                 <span className="bg-white/20 px-1.5 py-0.5 rounded text-[11px] font-mono font-black text-white shadow-inner min-w-[24px] text-center">
                   {formatDigit(timeLeft.hours)}
@@ -239,7 +228,7 @@ export default function Header() {
               <span className="text-white/30">|</span>
               <div className="flex items-center gap-1.5">
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/share/18YwHX7c31/?mibextid=wwXIfr"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"
@@ -250,7 +239,7 @@ export default function Header() {
                   </svg>
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/highline_himalayas?stkn=MTRrbWEzMmt6MHl4ag%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
@@ -361,18 +350,16 @@ export default function Header() {
               >
                 <button
                   type="button"
-                  className={`px-3 py-2 text-[13.5px] font-semibold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer ${
-                    activeDropdown === "national"
+                  className={`px-3 py-2 text-[13.5px] font-semibold rounded-lg transition-colors flex items-center gap-1.5 cursor-pointer ${activeDropdown === "national"
                       ? "text-[#FF6B00] bg-orange-50/80"
                       : "text-slate-700 hover:text-[#FF6B00] hover:bg-orange-50/60"
-                  }`}
+                    }`}
                 >
                   <span>National Destinations</span>
                   <ChevronDown
                     size={14}
-                    className={`transition-transform duration-200 ${
-                      activeDropdown === "national" ? "rotate-180 text-[#FF6B00]" : "text-slate-400"
-                    }`}
+                    className={`transition-transform duration-200 ${activeDropdown === "national" ? "rotate-180 text-[#FF6B00]" : "text-slate-400"
+                      }`}
                   />
                 </button>
 
@@ -468,7 +455,7 @@ export default function Header() {
               </button>
               <button
                 type="button"
-                onClick={() => setPayModalOpen(true)}
+                // onClick={() => setPayModalOpen(true)}
                 className="inline-flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-gradient-to-r from-[#FF6B00] via-[#FF7A00] to-[#FFA000] hover:from-[#E65100] hover:to-[#FF6B00] text-white text-[11.5px] sm:text-[13px] font-extrabold shadow-md shadow-orange-500/25 hover:shadow-lg hover:shadow-orange-500/35 transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap"
               >
                 <CreditCard size={13} className="shrink-0 sm:w-3.5 sm:h-3.5" />
@@ -516,7 +503,7 @@ export default function Header() {
               <div className="mt-4 p-3 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-sm">
                 <div className="flex items-center justify-between mb-1.5">
                   <span className="text-[11px] font-extrabold uppercase tracking-wide flex items-center gap-1 text-amber-100">
-                    <Flame size={13} /> Limited Offer — 35% OFF
+                    <Flame size={13} /> Himalayan Adventure
                   </span>
                   <span className="text-[10px] font-mono font-bold bg-black/20 px-1.5 py-0.5 rounded">
                     {formatDigit(timeLeft.hours)}:{formatDigit(timeLeft.minutes)}:
@@ -553,9 +540,8 @@ export default function Header() {
                     <span>National Destinations</span>
                     <ChevronDown
                       size={16}
-                      className={`transition-transform duration-200 ${
-                        mobileSubmenu === "national" ? "rotate-180 text-[#FF6B00]" : "text-slate-400"
-                      }`}
+                      className={`transition-transform duration-200 ${mobileSubmenu === "national" ? "rotate-180 text-[#FF6B00]" : "text-slate-400"
+                        }`}
                     />
                   </button>
                   {mobileSubmenu === "national" && (
@@ -603,10 +589,10 @@ export default function Header() {
                 </button>
                 <button
                   type="button"
-                  onClick={() => {
-                    setMobileDrawerOpen(false);
-                    setPayModalOpen(true);
-                  }}
+                  // onClick={() => {
+                  //   setMobileDrawerOpen(false);
+                  //   setPayModalOpen(true);
+                  // }}
                   className="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-[#FF6B00] to-[#FFA000] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm cursor-pointer"
                 >
                   <CreditCard size={14} />

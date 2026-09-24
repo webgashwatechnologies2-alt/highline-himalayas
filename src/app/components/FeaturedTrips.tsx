@@ -19,7 +19,7 @@ const featuredTripsData: FeaturedTripItem[] = [
     title: "Hampta Pass, Bhrigu Lake & Kheerganga Trek",
     startingPrice: "Price On Request",
     location: "Kullu-Manali, Himachal Pradesh",
-    image: "/images/featured_trip_banner.jpg",
+    image: "/images/Hampta-Pass.webp",
     buttonText: "Book my travel now"
   },
   {

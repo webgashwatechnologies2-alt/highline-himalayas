@@ -175,9 +175,11 @@ function BookingSidebar({ pkg }: { pkg: TourPackage }) {
           <p className="text-white text-[28px] font-black leading-none mb-1">{pkg.price}</p>
           <p className="text-white/60 text-[11px]">Per person · Inclusive of all taxes</p>
           <div className="mt-3 flex items-center gap-2">
-            <span className="bg-white/20 text-white text-[10px] font-black px-2.5 py-1 rounded-full">
-              {pkg.discount}
-            </span>
+            {pkg.discount?.trim() && (
+              <span className="bg-white/20 text-white text-[10px] font-black px-2.5 py-1 rounded-full">
+                {pkg.discount}
+              </span>
+            )}
             <div className="flex items-center gap-1">
               <Star size={11} className="fill-amber-300 text-amber-300" />
               <span className="text-white text-[11px] font-bold">{pkg.rating} ({pkg.reviews} reviews)</span>
@@ -361,8 +363,7 @@ export default function PackageDetailClient({ pkg }: { pkg: TourPackage }) {
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 py-6">
         <div className="mb-6">
           <div className="flex flex-wrap items-center gap-2 mb-2">
-            <span className="text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider"
-              style={{ background: pkg.badgeGrad }}>
+            <span className={`text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider bg-gradient-to-r ${pkg.badgeGrad}`}>
               {pkg.badge}
             </span>
             <span className={`text-[10px] font-extrabold px-2 py-0.5 rounded-full ${pkg.tagColor}`}>
@@ -377,17 +378,17 @@ export default function PackageDetailClient({ pkg }: { pkg: TourPackage }) {
           </h1>
           <p className="text-slate-500 text-sm font-medium mb-3">{pkg.subtitle}</p>
 
-          <div className="flex flex-wrap items-center gap-3 text-xs text-slate-500">
-            <div className="flex items-center gap-1.5 font-semibold">
-              <MapPin size={13} style={{ color: pkg.primaryColor }} />
-              <span>{pkg.route}</span>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-slate-500">
+            <div className="flex items-start gap-1.5 font-semibold min-w-0 w-full sm:w-auto">
+              <MapPin size={13} className="shrink-0 mt-0.5" style={{ color: pkg.primaryColor }} />
+              <span className="min-w-0 break-words">{pkg.route}</span>
             </div>
-            <span className="text-slate-300">|</span>
+            <span className="text-slate-300 hidden sm:inline">|</span>
             <div className="flex items-center gap-1.5 font-semibold">
               <Clock3 size={13} style={{ color: pkg.primaryColor }} />
               <span>{pkg.nights} / {pkg.days}</span>
             </div>
-            <span className="text-slate-300">|</span>
+            <span className="text-slate-300 hidden sm:inline">|</span>
             <div className="flex items-center gap-1.5 font-semibold">
               <Star size={13} className="fill-amber-400 text-amber-400" />
               <span>{pkg.rating} · {pkg.reviews} verified reviews</span>
@@ -395,8 +396,8 @@ export default function PackageDetailClient({ pkg }: { pkg: TourPackage }) {
           </div>
         </div>
 
-        <div className="flex flex-col xl:flex-row gap-7 items-start">
-          <div className="flex-1 min-w-0">
+        <div className="flex flex-col xl:flex-row gap-7 xl:items-start">
+          <div className="flex-1 min-w-0 w-full">
             <div className="rounded-3xl overflow-hidden mb-6 bg-slate-200">
               <div className="relative h-[280px] sm:h-[380px] md:h-[440px] w-full">
                 <Image
@@ -409,20 +410,19 @@ export default function PackageDetailClient({ pkg }: { pkg: TourPackage }) {
                   className="object-cover transition-opacity duration-300"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
-                  {pkg.includes?.map((inc) => {
-                    const info = INCLUDE_MAP[inc];
-                    if (!info) return null;
-                    return (
-                      <div
-                        key={inc}
-                        className={`flex items-center gap-1.5 ${info.bg} ${info.color} text-[10px] font-black px-2.5 py-1 rounded-full backdrop-blur-md shadow`}
-                      >
-                        {INCLUDE_ICONS[inc] ?? null}
-                        {info.label}
-                      </div>
-                    );
-                  })}
+                <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex flex-wrap gap-1.5 sm:gap-2">                  {pkg.includes?.map((inc) => {
+                  const info = INCLUDE_MAP[inc];
+                  if (!info) return null;
+                  return (
+                    <div
+                      key={inc}
+                      className={`flex items-center gap-1.5 ${info.bg} ${info.color} text-[10px] font-black px-2.5 py-1 rounded-full backdrop-blur-md shadow`}
+                    >
+                      {INCLUDE_ICONS[inc] ?? null}
+                      {info.label}
+                    </div>
+                  );
+                })}
                 </div>
               </div>
               {allImages.length > 1 && (
@@ -639,7 +639,7 @@ export default function PackageDetailClient({ pkg }: { pkg: TourPackage }) {
             </div>
           </div>
           <aside className="w-full xl:w-[320px] shrink-0">
-            <div className="sticky top-20 space-y-4">
+            <div className="xl:sticky xl:top-20 space-y-4">
               <BookingSidebar pkg={pkg} />
               <div className="bg-white border border-slate-100 rounded-3xl p-5 shadow-sm">
                 <p className="text-[11px] font-black text-slate-400 uppercase tracking-widest mb-3">Need Assistance?</p>

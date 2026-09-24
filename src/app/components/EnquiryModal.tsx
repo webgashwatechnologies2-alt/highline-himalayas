@@ -67,28 +67,20 @@ export default function EnquiryModal({
 
   return (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-
-      {/* Overlay */}
       <div
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
-
-      {/* Modal */}
       <div className="relative z-10 w-full max-w-lg bg-white rounded-3xl shadow-2xl overflow-hidden">
-
-        {/* Header */}
-        <div className="bg-[#1565C0] px-6 py-5 flex items-center justify-between">
+        <div className="bg-[#FF8C00] px-6 py-5 flex items-center justify-between">
           <div>
             <p className="text-white/70 text-[10px] font-bold uppercase">
               Package Enquiry
             </p>
-
             <h2 className="text-xl font-black text-white">
               {pkg.title}
             </h2>
           </div>
-
           <button
             type="button"
             onClick={onClose}
@@ -97,30 +89,22 @@ export default function EnquiryModal({
             <X size={18} />
           </button>
         </div>
-
-        {/* Package Details */}
         <div className="p-5 bg-blue-50 border-b">
           <p className="text-xs font-bold text-slate-500">
             {pkg.route}
           </p>
-
           <p className="text-sm font-black text-[#FF8C00] mt-1">
             Starting From: {pkg.price}
           </p>
         </div>
-
-        {/* Form */}
         <form
           onSubmit={handleSubmit}
           className="p-6 space-y-4"
         >
-
-          {/* Name */}
           <div>
             <label className="text-xs font-bold text-slate-600">
               Your Name
             </label>
-
             <input
               type="text"
               name="name"
@@ -129,13 +113,10 @@ export default function EnquiryModal({
               className="w-full mt-1 px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1565C0]"
             />
           </div>
-
-          {/* Phone */}
           <div>
             <label className="text-xs font-bold text-slate-600">
               Phone Number
             </label>
-
             <input
               type="tel"
               name="phone"
@@ -144,13 +125,10 @@ export default function EnquiryModal({
               className="w-full mt-1 px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1565C0]"
             />
           </div>
-
-          {/* Message */}
           <div>
             <label className="text-xs font-bold text-slate-600">
               Message
             </label>
-
             <textarea
               name="message"
               rows={4}
@@ -158,32 +136,24 @@ export default function EnquiryModal({
               className="w-full mt-1 px-4 py-3 rounded-xl border border-slate-200 outline-none focus:border-[#1565C0] resize-none"
             />
           </div>
-
-          {/* Success */}
           {success && (
             <div className="rounded-xl bg-green-50 border border-green-200 px-4 py-3 text-sm font-semibold text-green-700">
               {success}
             </div>
           )}
-
-          {/* Error */}
           {error && (
             <div className="rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm font-semibold text-red-700">
               {error}
             </div>
           )}
-
-          {/* Submit */}
           <button
             type="submit"
             disabled={loading}
             className="w-full py-3 rounded-xl bg-[#FF8C00] text-white font-black flex items-center justify-center gap-2 hover:scale-[1.02] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
           >
             <Send size={15} />
-
             {loading ? "SENDING..." : "SEND ENQUIRY"}
           </button>
-
         </form>
       </div>
     </div>

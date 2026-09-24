@@ -32,13 +32,13 @@ function TripadvisorIcon({ className = '' }: { className?: string }) {
 const testimonialsData: Testimonial[] = [
   {
     id: 1,
-    name: 'atanu chakraborty',
+    name: 'Lucky Chauhan',
     role: 'Highline Himalayas Traveler',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     rating: 5,
-    title: 'Average Experience',
+    title: 'Wonderful Experience',
     review:
-      'The trip was awesome! The hotels were good, and our cab driver was excellent. While the entire management team was nice, they were very busy, which led to a bit of a communication gap and made it hard to stay in touch at times. Overall, everything else was fine. Thank you, Anjali Mam, for this amazing itinerary.',
+      'Had a wonderful experience with Highline Himalayas. The trip planning was smooth, communication was excellent, and the hotel and transportation arrangements were well managed. The team was supportive throughout the journey and helped us plan everything according to our requirements. Highly recommended for anyone planning a Himachal trip. 🏔️❤️',
   },
   {
     id: 2,

@@ -4,6 +4,7 @@ import { useState, type ReactNode } from "react";
 import { submitLead } from "@/lib/lead-service";
 import Image from "next/image";
 import Link from "next/link";
+import EnquiryModal from "../components/EnquiryModal";
 import {
   MapPin, Star, ArrowRight, Clock3, Mountain, CheckCircle2,
   Car, Phone, User, Users, ChevronDown, Bed, UtensilsCrossed,
@@ -79,7 +80,7 @@ function BookingForm() {
   };
 
   return (
-    <div className="sticky top-24 rounded-3xl overflow-hidden shadow-[0_8px_48px_rgba(22,101,52,0.18)] border border-[#166534]/15">
+    <div className="lg:sticky lg:top-24 rounded-3xl overflow-hidden shadow-[0_8px_48px_rgba(22,101,52,0.18)] border border-[#166534]/15">
       <div className="relative bg-gradient-to-br from-[#FF8C00] via-[#FF8C00] to-[#FF8C00] px-6 py-5 overflow-hidden">
         <div className="absolute -top-4 -right-4 w-20 h-20 rounded-full bg-white/10" />
         <div className="absolute -bottom-6 -left-2 w-16 h-16 rounded-full bg-white/5" />
@@ -206,11 +207,11 @@ function BookingForm() {
         >
           <PhoneCall size={13} /> Call Our Expert
         </a>
-        <div className="flex items-center justify-center gap-4 pt-1">
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 pt-1">
           <div className="flex items-center gap-1 text-[10px] text-slate-400 font-semibold"><Shield size={10} className="text-emerald-500" /> Free Cancel</div>
-          <div className="w-px h-3 bg-slate-200" />
+          <div className="w-px h-3 bg-slate-200 hidden xs:block" />
           <div className="flex items-center gap-1 text-[10px] text-slate-400 font-semibold"><Award size={10} className="text-amber-500" /> Best Price</div>
-          <div className="w-px h-3 bg-slate-200" />
+          <div className="w-px h-3 bg-slate-200 hidden xs:block" />
           <div className="flex items-center gap-1 text-[10px] text-slate-400 font-semibold"><Headphones size={10} className="text-green-600" /> 24/7 Support</div>
         </div>
       </form>
@@ -253,74 +254,82 @@ function BookingForm() {
   );
 }
 
-function PackageCard({ pkg }: { pkg: typeof allPackages[number] }) {
+function PackageCard({
+  pkg,
+  onEnquire,
+}: {
+  pkg: typeof allPackages[number];
+  onEnquire: (pkg: typeof allPackages[number]) => void;
+}) {
   const [wished, setWished] = useState(false);
   return (
-    <article className="group relative z-10 flex flex-col sm:flex-row bg-white rounded-3xl border border-slate-100/80 shadow-[0_2px_20px_rgba(15,23,42,0.06)] hover:shadow-[0_16px_48px_rgba(15,23,42,0.14)] hover:-translate-y-1 transition-all duration-300 overflow-hidden">
-      <div className="relative w-full sm:w-[210px] md:w-[230px] shrink-0 h-[200px] sm:min-h-[260px] sm:h-auto sm:self-stretch overflow-hidden bg-slate-100">
-        <Image src={pkg.image} alt={pkg.title} fill sizes="(max-width: 640px) 100vw, 230px"
-          className="object-cover transition-transform duration-700 group-hover:scale-110" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent" />
-        <div className="absolute top-3 left-3">
-          <div className="flex items-center gap-1 bg-[#FF8C00] text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-lg shadow-orange-400/30">
-            <Percent size={8} strokeWidth={3} /> {pkg.discount}
-          </div>
-        </div>
-        <button type="button" onClick={() => setWished((w) => !w)}
-          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md hover:scale-110 transition-all">
-          <Heart size={14} className={wished ? "fill-red-500 text-red-500" : "text-slate-400"} />
-        </button>
-        <div className="absolute top-12 right-3 flex items-center gap-1 bg-black/60 backdrop-blur-md text-white text-[10px] font-black px-2 py-1 rounded-full">
-          <Star size={9} className="fill-amber-400 text-amber-400" /> {pkg.rating}
-        </div>
-        <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
-          <div className="flex items-center gap-1.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1.5 rounded-full">
-            <Clock3 size={10} className="text-green-400" /> {pkg.nights} / {pkg.days}
-          </div>
-          <div className="flex items-center gap-1 text-white text-[10px] font-semibold drop-shadow">
-            <MapPin size={10} className="text-green-400 shrink-0" />
-            <span className="truncate max-w-[100px]">{pkg.route.split("→")[0].trim()}</span>
-          </div>
+    <article className="group relative isolate flex flex-col sm:flex-row bg-white rounded-3xl border border-slate-100/80 shadow-[0_2px_20px_rgba(15,23,42,0.06)] sm:hover:shadow-[0_16px_48px_rgba(15,23,42,0.14)] sm:hover:-translate-y-1 transition-all duration-300 overflow-hidden max-w-full">      <div className="relative w-full sm:w-[210px] md:w-[230px] shrink-0 h-[200px] sm:min-h-[260px] sm:h-auto sm:self-stretch overflow-hidden bg-slate-100">
+      <Image src={pkg.image} alt={pkg.title} fill sizes="(max-width: 640px) 100vw, 230px"
+        className="object-cover transition-transform duration-700 group-hover:scale-110" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-transparent" />
+      <div className="absolute top-3 left-3">
+        <div className="flex items-center gap-1 bg-[#FF8C00] text-white text-[10px] font-black px-2.5 py-1 rounded-full shadow-lg shadow-orange-400/30">
+          <Percent size={8} strokeWidth={3} /> {pkg.discount}
         </div>
       </div>
+      <button type="button" onClick={() => setWished((w) => !w)}
+        className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-md hover:scale-110 transition-all">
+        <Heart size={14} className={wished ? "fill-red-500 text-red-500" : "text-slate-400"} />
+      </button>
+      <div className="absolute top-12 right-3 flex items-center gap-1 bg-black/60 backdrop-blur-md text-white text-[10px] font-black px-2 py-1 rounded-full">
+        <Star size={9} className="fill-amber-400 text-amber-400" /> {pkg.rating}
+      </div>
+      <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between">
+        <div className="flex items-center gap-1.5 bg-black/65 backdrop-blur-md text-white text-[10px] font-bold px-2.5 py-1.5 rounded-full">
+          <Clock3 size={10} className="text-green-400" /> {pkg.nights} / {pkg.days}
+        </div>
+        <div className="flex items-center gap-1 text-white text-[10px] font-semibold drop-shadow">
+          <MapPin size={10} className="text-green-400 shrink-0" />
+          <span className="truncate max-w-[100px]">{pkg.route.split("→")[0].trim()}</span>
+        </div>
+      </div>
+    </div>
       <div className="flex flex-1 flex-col sm:flex-row min-w-0">
-        <div className="flex-1 px-5 py-4 min-w-0">
+        <div className="flex-1 px-4 sm:px-5 py-3.5 sm:py-4 min-w-0">
           <span className={`inline-flex items-center text-[10px] font-black px-2.5 py-0.5 rounded-full border ${pkg.tagColor} mb-2`}>{pkg.tag}</span>
-          <h3 className="text-[20px] font-black leading-tight text-slate-900 group-hover:text-[#166534] transition-colors duration-200 mb-1.5 line-clamp-1">{pkg.title}</h3>
-          <div className="flex items-center gap-1.5 mt-3">
-            <div className="flex items-center gap-1 text-[#166534] bg-green-50 rounded-full px-2.5 py-2 text-[10px] font-bold">
+          <h3 className="text-[17px] sm:text-[20px] font-black leading-tight text-slate-900 group-hover:text-[#166534] transition-colors duration-200 mb-1.5 line-clamp-2 sm:line-clamp-1">{pkg.title}</h3>
+          <div className="flex items-center gap-1.5 mt-2 sm:mt-3">
+            <div className="inline-flex max-w-full items-center gap-1 text-[#166534] bg-green-50 rounded-full px-2.5 py-1.5 sm:py-2 text-[10px] font-bold">
               <MapPin size={10} strokeWidth={2.5} className="shrink-0" />
               <span className="truncate">{pkg.route}</span>
             </div>
           </div>
-          <ul className="space-y-1.5 mb-6 mt-6">
+          <ul className="space-y-1.5 mb-4 sm:mb-6 mt-3 sm:mt-6">
             {pkg.highlights.slice(0, 3).map((h, i) => (
-              <li key={i} className="flex items-start gap-2 text-[13px] text-slate-600 leading-tight">
+              <li key={i} className="flex items-start gap-2 text-[12px] sm:text-[13px] text-slate-600 leading-tight">
                 <CheckCircle2 size={13} className="mt-0.5 shrink-0 text-[#16A34A]" strokeWidth={2.5} /> {h}
               </li>
             ))}
           </ul>
           <div className="flex flex-wrap gap-1.5">{pkg.includes.map((inc) => <IncludeIcon key={inc} type={inc} />)}</div>
         </div>
-        <div className="flex flex-row sm:flex-col items-center sm:items-stretch justify-between sm:justify-center gap-2.5 px-4 py-3 sm:px-4 sm:py-4 sm:w-[165px] border-t sm:border-t-0 sm:border-l border-slate-100 bg-gradient-to-br from-slate-50 to-green-50/30 shrink-0">
-          <span className={`text-white text-[9px] font-black uppercase tracking-wide px-3 py-1 rounded-full bg-gradient-to-r ${pkg.badgeGrad} shadow-sm text-center`}>{pkg.badge}</span>
-          <div className="text-center">
-            <p className="text-[9px] text-slate-400 font-semibold uppercase tracking-wide hidden sm:block mb-0.5">Starting From</p>
-            <p className="text-[13px] font-black text-[#166534] leading-tight">{pkg.price}</p>
+        <div className="flex flex-col sm:flex-col justify-between sm:justify-center gap-2.5 px-4 py-3 sm:px-4 sm:py-4 sm:w-[165px] border-t sm:border-t-0 sm:border-l border-slate-100 bg-gradient-to-br from-slate-50 to-green-50/30 shrink-0">
+          <div className="flex sm:flex-col items-center justify-between sm:justify-center gap-2">
+            <span className={`text-white text-[9px] font-black uppercase tracking-wide px-3 py-1 rounded-full bg-gradient-to-r ${pkg.badgeGrad} shadow-sm text-center`}>{pkg.badge}</span>
+            <div className="text-right sm:text-center">
+              <p className="text-[9px] text-slate-400 font-semibold uppercase tracking-wide hidden sm:block mb-0.5">Starting From</p>
+              <p className="text-[13px] font-black text-[#166534] leading-tight">{pkg.price}</p>
+            </div>
+            <div className="hidden sm:flex items-center justify-center gap-0.5">
+              {[1, 2, 3, 4, 5].map((s) => (
+                <Star key={s} size={9} className={s <= Math.round(pkg.rating) ? "fill-amber-400 text-amber-400" : "text-slate-300 fill-slate-200"} />
+              ))}
+            </div>
           </div>
-          <div className="hidden sm:flex items-center justify-center gap-0.5">
-            {[1, 2, 3, 4, 5].map((s) => (
-              <Star key={s} size={9} className={s <= Math.round(pkg.rating) ? "fill-amber-400 text-amber-400" : "text-slate-300 fill-slate-200"} />
-            ))}
-          </div>
-          <div className="flex flex-row sm:flex-col gap-2 w-full sm:mt-1">
+          <div className="grid grid-cols-2 sm:flex sm:flex-col gap-2 w-full sm:mt-1">
             <Link href={`/packages/${pkg.id}`}
-              className="flex items-center justify-center gap-1 h-9 rounded-xl bg-gradient-to-r from-[#FF8C00] to-[#FF8C00] text-white text-[10px] font-black shadow-md shadow-green-200 hover:shadow-lg hover:scale-[1.03] active:scale-95 transition-all w-full">
+              className="flex items-center justify-center gap-1 h-9 rounded-xl bg-gradient-to-r from-[#FF8C00] to-[#FF8C00] text-white text-[10px] sm:text-[11px] font-black shadow-md shadow-green-200 hover:shadow-lg hover:scale-[1.03] active:scale-95 transition-all w-full text-center">
               GET DETAILS <ArrowRight size={10} strokeWidth={3} />
             </Link>
             <button type="button"
-              className="flex items-center justify-center gap-1 h-9 rounded-xl border-2 border-[#166534]/60 text-[#166534] text-[10px] font-black hover:bg-[#166534] hover:text-white hover:border-[#166534] transition-all w-full">
+              onClick={() => onEnquire(pkg)}
+              className="flex items-center justify-center gap-1 h-9 rounded-xl border-2 border-[#166534]/60 text-[#166534] text-[10px] sm:text-[11px] font-black hover:bg-[#166534] hover:text-white hover:border-[#166534] transition-all w-full cursor-pointer">
               <MessageCircle size={10} /> ENQUIRE
             </button>
           </div>
@@ -332,7 +341,7 @@ function PackageCard({ pkg }: { pkg: typeof allPackages[number] }) {
 
 function TrustBadge({ icon, iconClassName, children }: { icon: ReactNode; iconClassName?: string; children: ReactNode }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-4 py-2 text-xs font-bold text-white shadow-lg">
+    <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] sm:text-xs font-bold text-white shadow-lg">
       <span className={`flex h-6 w-6 items-center justify-center rounded-full ${iconClassName || "bg-white/15"}`}>{icon}</span>
       {children}
     </div>
@@ -341,22 +350,24 @@ function TrustBadge({ icon, iconClassName, children }: { icon: ReactNode; iconCl
 
 function StatCard({ value, label, icon }: { value: string; label: string; icon: ReactNode }) {
   return (
-    <div className="flex flex-col items-center gap-1 px-6 py-4">
-      <div className="text-[#166534] mb-1">{icon}</div>
-      <div className="text-2xl font-black text-slate-900">{value}</div>
-      <div className="text-[11px] font-semibold text-slate-500 text-center">{label}</div>
+    <div className="flex flex-col items-center gap-1 px-2 sm:px-6 py-3.5 sm:py-4">
+      <div className="text-[#166534] mb-0.5 sm:mb-1">{icon}</div>
+      <div className="text-xl sm:text-2xl font-black text-slate-900">{value}</div>
+      <div className="text-[10px] sm:text-[11px] font-semibold text-slate-500 text-center">{label}</div>
     </div>
   );
 }
 
 export default function Kerala() {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [selectedPackage, setSelectedPackage] =
+    useState<typeof allPackages[number] | null>(null);
   const filtered = activeFilter === "all" ? packages : packages.filter((p) => p.category === activeFilter);
 
   return (
-    <div className="w-full bg-[#F8FAFC] min-h-screen">
+    <div className="w-full bg-[#F8FAFC] min-h-screen overflow-x-hidden">
       {/* ── HERO ──────────────────────────────────────────────────── */}
-      <section className="relative isolate w-full min-h-[540px] overflow-hidden">
+      <section className="relative isolate w-full min-h-[420px] sm:min-h-[540px] overflow-hidden">
         <div className="absolute inset-0 -z-20 bg-[#052e16]">
           <Image
             src="/images/packagesimages/keralahero.webp"
@@ -370,45 +381,43 @@ export default function Kerala() {
         <div className="absolute -top-24 -right-24 w-[420px] h-[420px] rounded-full bg-[#16A34A]/20 blur-3xl pointer-events-none" />
         <div className="absolute -bottom-16 -left-16 w-[320px] h-[320px] rounded-full bg-[#EA580C]/20 blur-3xl pointer-events-none" />
 
-        <div className="mx-auto flex min-h-[540px] max-w-[1400px] items-center justify-center px-4 py-20 sm:px-6 lg:px-10">
-          <div className="w-full max-w-[860px] text-center">
-            <nav aria-label="Breadcrumb" className="mb-6 flex justify-center">
-              <ol className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-5 py-2 text-[11px] font-bold text-white shadow-lg">
-                <li><Link href="/" className="hover:text-[#FF8C00] transition-colors">Home</Link></li>
-                <li className="text-white/40">/</li>
-                <li><Link href="" className="hover:text-[#FF8C00] transition-colors">National Destinations</Link></li>
-                <li className="text-white/40">/</li>
-                <li className="flex items-center gap-1 text-[#86EFAC]" aria-current="page">
-                  <Palmtree size={12} /> Kerala
-                </li>
-              </ol>
-            </nav>
-            <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-5">
-              <Sparkles size={13} className="text-orange-300" />
-              <span className="text-white/90 text-[12px] font-bold tracking-wider uppercase">God&apos;s Own Country</span>
-            </div>
-            <h1 className="text-4xl sm:text-5xl md:text-[58px] font-black leading-[1.0] tracking-[-0.03em] text-white mb-5">
-              Kerala{" "}
-              <span className="bg-gradient-to-r from-[#FF8800] via-[#FF8800] to-[#FACC15] bg-clip-text text-transparent">
-                Tour Packages
-              </span>
-            </h1>
-            <p className="mx-auto max-w-[640px] text-[14px] sm:text-[15px] leading-7 text-white/85 mb-8">
-              Palm-fringed backwaters, misty tea gardens, elephant safaris & pristine beaches —
-              experience God&apos;s Own Country. Explore Munnar, Alleppey, Thekkady, Kovalam &amp; more.
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-3">
-              <TrustBadge icon={<CheckCircle2 size={13} strokeWidth={3} />} iconClassName="bg-[#FF8C00] text-white">8 Packages</TrustBadge>
-              <TrustBadge icon={<Star size={13} className="fill-amber-300 text-amber-300" />}>4.9 / 5 Rated</TrustBadge>
-              <TrustBadge icon={<Shield size={13} className="text-green-300" />}>100% Safe Travel</TrustBadge>
-              <TrustBadge icon={<Headphones size={13} className="text-orange-300" />}>24/7 Support</TrustBadge>
-            </div>
+        <div className="mx-auto flex min-h-[420px] sm:min-h-[540px] max-w-[1400px] items-center justify-center px-4 pt-16 pb-24 sm:py-20 sm:px-6 lg:px-10">          <div className="w-full max-w-[860px] text-center">
+          <nav aria-label="Breadcrumb" className="mb-5 sm:mb-6 flex justify-center">
+            <ol className="inline-flex flex-wrap justify-center items-center gap-1.5 sm:gap-2 rounded-2xl sm:rounded-full border border-white/25 bg-white/10 backdrop-blur-md px-3.5 sm:px-5 py-1.5 sm:py-2 text-[10px] sm:text-[11px] font-bold text-white shadow-lg max-w-full text-center">
+              <li><Link href="/" className="hover:text-[#FF8C00] transition-colors">Home</Link></li>
+              <li className="text-white/40">/</li>
+              <li><Link href="" className="hover:text-[#FF8C00] transition-colors">National Destinations</Link></li>
+              <li className="text-white/40">/</li>
+              <li className="flex items-center gap-1 text-[#86EFAC]" aria-current="page">
+                <Palmtree size={12} /> Kerala
+              </li>
+            </ol>
+          </nav>
+          <div className="inline-flex items-center gap-2 bg-white/15 backdrop-blur-md border border-white/20 rounded-full px-3.5 sm:px-4 py-1.5 mb-4 sm:mb-5">
+            <Sparkles size={13} className="text-orange-300" />
+            <span className="text-white/90 text-[11px] sm:text-[12px] font-bold tracking-wider uppercase">God&apos;s Own Country</span>
           </div>
+          <h1 className="text-[28px] sm:text-5xl md:text-[58px] font-black leading-tight sm:leading-[1.0] tracking-[-0.02em] sm:tracking-[-0.03em] text-white mb-4 sm:mb-5 px-1">            Kerala{" "}
+            <span className="bg-gradient-to-r from-[#FF8800] via-[#FF8800] to-[#FACC15] bg-clip-text text-transparent">
+              Tour Packages
+            </span>
+          </h1>
+          <p className="mx-auto max-w-[640px] text-[13px] sm:text-[15px] leading-relaxed sm:leading-7 text-white/85 mb-6 sm:mb-8 px-2 sm:px-0">
+            Palm-fringed backwaters, misty tea gardens, elephant safaris & pristine beaches —
+            experience God&apos;s Own Country. Explore Munnar, Alleppey, Thekkady, Kovalam &amp; more.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            <TrustBadge icon={<CheckCircle2 size={13} strokeWidth={3} />} iconClassName="bg-[#FF8C00] text-white">8 Packages</TrustBadge>
+            <TrustBadge icon={<Star size={13} className="fill-amber-300 text-amber-300" />}>4.9 / 5 Rated</TrustBadge>
+            <TrustBadge icon={<Shield size={13} className="text-green-300" />}>100% Safe Travel</TrustBadge>
+            <TrustBadge icon={<Headphones size={13} className="text-orange-300" />}>24/7 Support</TrustBadge>
+          </div>
+        </div>
         </div>
       </section>
 
       {/* ── STAT BAR ──────────────────────────────────────────────── */}
-      <section className="relative -mt-1 z-10">
+      <section className="relative z-[1] -mt-14 sm:-mt-10">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
           <div className="bg-white rounded-3xl shadow-[0_4px_40px_rgba(15,23,42,0.10)] border border-slate-100 overflow-hidden">
             <div className="grid grid-cols-2 sm:grid-cols-4 divide-x divide-y sm:divide-y-0 divide-slate-100">
@@ -422,16 +431,16 @@ export default function Kerala() {
       </section>
 
       {/* ── PACKAGES + SIDEBAR ───────────────────────────────────── */}
-      <section className="w-full py-12 sm:py-16">
+      <section className="relative z-0 w-full pt-8 pb-12 sm:py-16">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10">
           <div className="flex flex-col lg:flex-row gap-8 items-start">
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 w-full">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-                <div>
+                <div className="min-w-0">
                   <div className="flex items-center gap-2 text-[#EA580C] font-black text-[11px] tracking-widest uppercase mb-1">
                     <Sparkles size={12} /> Curated For You
                   </div>
-                  <h2 className="text-xl sm:text-2xl font-black text-slate-900">
+                  <h2 className="text-xl sm:text-2xl font-black text-slate-900 break-words">
                     Top Packages in <span className="text-[#166534]">Kerala</span>
                   </h2>
                 </div>
@@ -440,10 +449,10 @@ export default function Kerala() {
                   <span className="text-[11px] font-bold text-slate-400">{filtered.length} of {packages.length} packages</span>
                 </div>
               </div>
-              <div className="flex flex-wrap gap-2 mb-7">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-7">
                 {FILTERS.map((f) => (
                   <button key={f.id} type="button" onClick={() => setActiveFilter(f.id)}
-                    className={`px-4 py-1.5 rounded-full text-[11px] font-black border transition-all ${activeFilter === f.id
+                    className={`shrink-0 px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-[11px] font-black border transition-all cursor-pointer ${activeFilter === f.id
                       ? "bg-[#166534] text-white border-[#166534] shadow-md shadow-green-200"
                       : "bg-white text-slate-600 border-slate-200 hover:border-[#166534] hover:text-[#166534]"
                       }`}>
@@ -451,20 +460,30 @@ export default function Kerala() {
                   </button>
                 ))}
               </div>
-              <div className="space-y-4">
+              <div className="space-y-4 overflow-hidden sm:overflow-visible">
                 {filtered.length === 0
                   ? <div className="text-center py-16 text-slate-400 font-semibold">No packages found for this category.</div>
-                  : filtered.map((pkg) => <PackageCard key={pkg.id} pkg={pkg} />)}
+                  : filtered.map((pkg) => (
+                    <PackageCard
+                      key={pkg.id}
+                      pkg={pkg}
+                      onEnquire={(selectedPkg) => setSelectedPackage(selectedPkg)}
+                    />
+                  ))}
               </div>
             </div>
-            <aside className="w-full lg:w-[295px] xl:w-[315px] shrink-0">
+            <aside className="w-full lg:w-[295px] xl:w-[315px] shrink-0 min-w-0">
               <BookingForm />
-
-
             </aside>
           </div>
         </div>
       </section>
+      {selectedPackage && (
+        <EnquiryModal
+          pkg={selectedPackage}
+          onClose={() => setSelectedPackage(null)}
+        />
+      )}
     </div>
   );
 }
