@@ -47,4 +47,4 @@ jobs:
             -i ~/.ssh/id_ed25519 \
             -P "${{ secrets.PORT }}" \
             ./out/. \
-            "${{ secrets.USERNAME }}@${{ secrets.HOST }}:/home/${{ secrets.USERNAME }}/public_html/"
+            "${{ secrets.USERNAME }}@${{ secrets.HOST }}:/home/${{ secrets.USERNAME }}/domains/highlinehimalayas.com/public_html/"
